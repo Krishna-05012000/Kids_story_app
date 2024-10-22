@@ -47,7 +47,10 @@ def reset_sentence_queue():
 reset_sentence_queue()
 
 p = pyaudio.PyAudio()
-stream = p.open(format=pyaudio.paInt16, channels=1, rate=24000, input=True, frames_per_buffer=1024)
+if p.get_device_count() == 0:
+    print("No input devices available")
+else:
+    stream = p.open(format=pyaudio.paInt16, channels=1, rate=24000, input=True, frames_per_buffer=1024)
 
 session_updated = False  # Track session state
 ws = None  # Global WebSocket reference to avoid scope issues
