@@ -8,7 +8,7 @@ import streamlit as st
 from collections import deque
 
 # Constants
-API_KEY = "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"
+API_KEY = 'enter keys'
 URL = "wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-10-01"
 
 HEADERS = {
